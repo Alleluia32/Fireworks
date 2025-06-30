@@ -1,0 +1,59 @@
+body {
+    background: #000;
+    margin: 0;
+    overflow: hidden; /* Prevent scrollbars if content overflows slightly */
+	font-family: Arial, sans-serif;
+}
+
+canvas {
+    cursor: crosshair;
+    display: block; /* Remove extra space below canvas */
+	 position: relative; /* Canvas cần có position để z-index hoạt động */
+    z-index: 1; /* Đảm bảo canvas nằm trên text */
+}
+
+#info {
+    background: rgba(0, 0, 0, 0.6);
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: auto;
+    max-width: 280px;
+    color: #fff;
+    border-radius: 8px;
+    padding: 5px 15px;
+    z-index: 10; /* Đảm bảo info nằm trên mọi thứ */
+    text-align: right;
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.1);
+}
+
+#info p {
+    margin: 5px 0; /* Adjust vertical spacing */
+    line-height: 1.4;
+}
+
+#info b {
+    color: #ffda6a; /* Nicer color for the name */
+}
+
+#info a { 
+    color: #f2ea0a; 
+}
+#background-text {
+    position: absolute; /* Đặt vị trí tuyệt đối */
+    top: 50%; /* Canh giữa theo chiều dọc */
+    left: 50%; /* Canh giữa theo chiều ngang */
+    transform: translate(-50%, -50%); /* Dịch chuyển để căn đúng vào giữa */
+    color: rgba(255, 255, 255, 0.1); /* Màu trắng nhạt, trong suốt */
+    font-size: 10vw; /* Kích thước chữ động theo chiều rộng màn hình */
+    font-weight: bold; /* In đậm */
+    text-shadow: 0 0 20px rgba(255, 255, 255, 0.05); /* Hiệu ứng tỏa sáng nhẹ */
+    white-space: nowrap; /* Ngăn chữ xuống dòng */
+    user-select: none; /* Ngăn không cho người dùng chọn chữ */
+    pointer-events: none; /* Ngăn không cho chữ chặn các sự kiện chuột trên canvas */
+    z-index: 0; /* Rất quan trọng: Đặt nó dưới canvas */
+    /* Bạn có thể thử các font chữ khác đẹp hơn */
+    font-family: 'Times New Roman', Times, serif; /* Ví dụ, font cổ điển hơn */
+    /* Hoặc các font handwriting/cursive từ Google Fonts nếu bạn muốn */
+    /* font-family: 'Pacifico', cursive; */
+}
